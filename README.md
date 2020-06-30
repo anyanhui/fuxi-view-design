@@ -26,7 +26,7 @@ ViewUI
 
 ## Docs
 
-**[4.x](https://www.iviewui.com)** | [3.x](http://v3.iviewui.com) | [2.x](http://v2.iviewui.com) | [1.x](http://v1.iviewui.com)
+**[4.x](https://www.iviewui.com)**
 
 ## Features
 
@@ -36,21 +36,11 @@ ViewUI
 - It is quite beautiful.
 - Supports both Vue.js 2 and Vue.js 1.
 
-## Who's using ViewUI
-
-![](https://file.iviewui.com/iview-design-dist/7fe5f4413704bbcb3ccc461ba92f6b50.jpg)
-
-## Install
-
-We provide an [View UI plugin](https://github.com/iview-design/vue-cli-plugin-viewui) for Vue CLI 3, which you can use to quickly build an ViewUI-based project.
-
-We also provide a starter kit [view-ui-project](https://github.com/iview-design/view-ui-project) for you.
-
 ### Install View UI
 
 Using npm:
 ```
-npm install view-design --save
+npm install fuxi-view-design --save
 ```
 
 Using a script tag for global use:
@@ -82,7 +72,7 @@ You can find more info [on the website](https://www.iviewui.com/docs/guide/insta
 Using css via `import`:
 
 ```js
-import 'view-design/dist/styles/iview.css';
+import 'fuxi-view-design/dist/styles/iview.css';
 ```
 
 ## Compatibility
@@ -103,25 +93,13 @@ If you want to contribute or have questions or bugs to report:
 **Bugs:** [File a issue here](https://github.com/iview-design/iview/issues) - please provide a example so we can help you better  
 **Contribute:** Contact us in [Gitter chat](https://gitter.im/iview/iview), WeChat or via mail to `admin@aresn.com`. PRs welcome!
 
-## Major Contributors
-|Name|Avatar|Name|Avatar|Name|Avatar|
-|---|---|---|---|---|---|
-|[Aresn](https://github.com/icarusion) |  ![](https://avatars3.githubusercontent.com/u/5370542?v=3&s=60)  |[jingsam](https://github.com/jingsam) |  ![](https://avatars3.githubusercontent.com/u/1522494?v=3&s=60)  | [rijn](https://github.com/rijn)       |  ![](https://avatars2.githubusercontent.com/u/6976367?v=3&s=60)  |
-|[lcx960324](https://github.com/lcx960324)           |  ![](https://avatars3.githubusercontent.com/u/9768245?v=3&s=60)  |[GITleonine1989](https://github.com/GITleonine1989) |  ![](https://avatars1.githubusercontent.com/u/7582490?v=3&s=60)  |[huixisheng](https://github.com/huixisheng)         |  ![](https://avatars1.githubusercontent.com/u/1518967?v=3&s=60)  |
-|[Sergio Crisostomo](https://github.com/SergioCrisostomo)           |  ![](https://avatars3.githubusercontent.com/u/5614559?v=3&s=60)  |  [lison16](https://github.com/lison16)           |  ![](https://avatars3.githubusercontent.com/u/20942571?v=3&s=60) |  [Xotic750](https://github.com/Xotic750)    | ![](https://avatars3.githubusercontent.com/u/216041?v=3&s=60)   | 
-[huanghong1125](https://github.com/huanghong1125) | ![](https://avatars3.githubusercontent.com/u/12794817?v=3&s=60) | [yangdan8](https://github.com/yangdan8) | ![](https://avatars2.githubusercontent.com/u/16515026?v=3&s=60) |
-
 
 ## Ecosystem Links
 
-- [View UI Pro](https://pro.iviewui.com/pro)
-- [View UI Admin Pro](https://pro.iviewui.com/admin-pro)
 - [Developer](https://dev.iviewui.com)
 - [Run](https://run.iviewui.com)
-- [iView-Loader](https://github.com/iview/iview-loader)
-- [ViewUI-Plugin](https://github.com/iview/vue-cli-plugin-iview)
 
 ## License
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2016-present, ViewDesign
+Copyright (c) 2020-present, FViewDesign
