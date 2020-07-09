@@ -55,7 +55,7 @@
     import Mixin from '../panel-mixin';
     import Locale from '../../../../mixins/locale';
 
-    import { initTimeDate, formatDateLabels } from '../../util';
+    import { initTimeDate, formatDateLabels, initEndTimeDate } from '../../util';
 
     const prefixCls = 'ivu-picker-panel';
     const timePrefixCls = 'ivu-time-picker';
@@ -87,7 +87,7 @@
                 timePrefixCls: timePrefixCls,
                 showDate: false,
                 dateStart: dateStart || initTimeDate(),
-                dateEnd: dateEnd || initTimeDate()
+                dateEnd: dateEnd || initEndTimeDate()
             };
         },
         computed: {
@@ -115,7 +115,7 @@
             value (dates) {
                 const [dateStart, dateEnd] = dates.slice();
                 this.dateStart = dateStart || initTimeDate();
-                this.dateEnd = dateEnd || initTimeDate();
+                this.dateEnd = dateEnd || initEndTimeDate();
             }
         },
         methods: {

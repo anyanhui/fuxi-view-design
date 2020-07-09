@@ -74,6 +74,14 @@ export const initTimeDate = function() {
     return date;
 };
 
+export const initEndTimeDate = function() {
+    const date = new Date();
+    date.setHours(23);
+    date.setMinutes(59);
+    date.setSeconds(59);
+    return date;
+};
+
 export const formatDateLabels = (function() {
     /*
       Formats:

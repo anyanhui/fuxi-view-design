@@ -285,7 +285,7 @@
                 if (this.disabled) return;
                 this.currentPageSize = pageSize;
                 this.$emit('on-page-size-change', pageSize);
-                this.changePage(1);
+                // this.changePage(1);
             },
             onPage (page) {
                 if (this.disabled) return;

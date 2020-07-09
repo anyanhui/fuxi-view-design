@@ -55,6 +55,7 @@
                         :start-date="startDate"
                         :split-panels="splitPanels"
                         :show-week-numbers="showWeekNumbers"
+                        :default-time="defaultTime"
                         :picker-type="type"
                         :multiple="multiple"
                         :focused-date="focusedDate"
@@ -165,6 +166,10 @@
             showWeekNumbers: {
                 type: Boolean,
                 default: false
+            },
+            defaultTime: {
+                type: Array,
+                default: () => []
             },
             startDate: {
                 type: Date
@@ -702,7 +707,32 @@
                         } else {
                             const [start, end] = val;
                             if (start instanceof Date && end instanceof Date){
-                                val = val.map(date => new Date(date));
+                                if (this.defaultTime.length == 0) {
+                                    val = val.map(date => new Date(date))
+                                } else {
+                                    const [defaultTimeStart, defaultTimeEnd] = this.defaultTime;
+                                    val = val.map((date, index) => {
+                                        if (index == 0) {
+                                            let timeStart = defaultTimeStart.split(':')
+                                            let minDateTime = new Date(date);
+                                            if (minDateTime.getHours() == 0 && minDateTime.getMinutes() == 0 && minDateTime.getSeconds() == 0) {
+                                                minDateTime.setHours(timeStart[0]);
+                                                minDateTime.setMinutes(timeStart[1]);
+                                                minDateTime.setSeconds(timeStart[2]);
+                                            }
+                                            return new Date(minDateTime)
+                                        } else if (index == 1) {
+                                            let timeEnd = defaultTimeEnd.split(':')
+                                            let maxDateTime = new Date(date);
+                                            if (maxDateTime.getHours() == 0 && maxDateTime.getMinutes() == 0 && maxDateTime.getSeconds() == 0) {
+                                                maxDateTime.setHours(timeEnd[0]);
+                                                maxDateTime.setMinutes(timeEnd[1]);
+                                                maxDateTime.setSeconds(timeEnd[2]);
+                                            }
+                                            return new Date(maxDateTime)
+                                        }
+                                    })
+                                }
                             } else if (typeof start === 'string' && typeof end === 'string'){
                                 val = parser(val.join(this.separator), format, this.separator);
                             } else if (!start || !end){
@@ -738,6 +768,7 @@
                     const timeStamps = allDates.map(date => date.getTime()).filter((ts, i, arr) => arr.indexOf(ts) === i && i !== indexOfPickedDate); // filter away duplicates
                     this.internalValue = timeStamps.map(ts => new Date(ts));
                 } else {
+                    console.log(dates);
                     dates = this.parseDate(dates);
                     this.internalValue = Array.isArray(dates) ? dates : [dates];
                 }
@@ -774,6 +805,7 @@
                 this.$emit('on-open-change', state);
             },
             value(val) {
+                console.log(val);
                 this.internalValue = this.parseDate(val);
             },
             open (val) {

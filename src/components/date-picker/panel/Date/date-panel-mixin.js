@@ -1,6 +1,6 @@
 
 import { oneOf } from '../../../../utils/assist';
-import {initTimeDate } from '../../util';
+import {initTimeDate, initEndTimeDate } from '../../util';
 
 
 export default {
@@ -30,7 +30,7 @@ export default {
         },
         value: {
             type: Array,
-            default: () => [initTimeDate(), initTimeDate()]
+            default: () => [initTimeDate(), initEndTimeDate()]
         },
         timePickerOptions: {
             default: () => ({}),
@@ -39,6 +39,10 @@ export default {
         showWeekNumbers: {
             type: Boolean,
             default: false
+        },
+        defaultTime: {
+            type: Array,
+            default: () => []
         },
         startDate: {
             type: Date
